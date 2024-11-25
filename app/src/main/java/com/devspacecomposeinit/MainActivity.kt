@@ -73,14 +73,14 @@ class MainActivity : ComponentActivity() {
                         art = R.drawable.ic_starry_night
                     )
 
-                    val artists = listOf(vanGogh, salvador, picasso, leonardo)
+                    val artist = listOf(vanGogh, salvador, picasso, leonardo)
 
                     LazyColumn {
-                        items(artists) { artist ->
+                        items(artist) { artist ->
                             ArtistCard(
                                 artist = artist,
                                 onClick = {
-                                    println("Roque test " + artist.name)
+                                    println("Roque test" + artist.name)
                                 }
                             )
                         }
@@ -96,46 +96,46 @@ class MainActivity : ComponentActivity() {
 fun ArtistCard(
     artist: Artist,
     onClick: () -> Unit
-) {
-    Column(
+){
+    Column (
         modifier = Modifier
             .padding(8.dp)
             .clickable(onClick = onClick)
     ) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Image(
-                modifier = Modifier
-                    .size(60.dp)
-                    .clip(CircleShape),
-                contentScale = ContentScale.FillWidth,
-                painter = painterResource(id = artist.image),
-                contentDescription = "Artist image"
+    Row(verticalAlignment = Alignment.CenterVertically){
+        Image(
+            modifier = Modifier
+                .size(60.dp)
+                .clip(CircleShape),
+            contentScale = ContentScale.FillWidth,
+            painter = painterResource(id = artist.image),
+            contentDescription = "Artist image"
+        )
+        Spacer(modifier = Modifier.size(16.dp))
+        Column {
+            Text(
+                text = artist.name,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.SemiBold
             )
-            Spacer(modifier = Modifier.size(16.dp))
-            Column {
-                Text(
-                    text = artist.name,
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.SemiBold
-                )
-                Text(
-                    text = artist.lastSeenOnline,
-                    color = Color.Gray
-                )
-            }
+            Text(
+                text = artist.lastSeenOnline,
+                color = Color.Gray
+            )
         }
+    }
         Card(
             modifier = Modifier
                 .padding(8.dp),
             elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
-        ) {
-            Image(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(200.dp),
-                contentScale = ContentScale.Crop,
-                painter = painterResource(id = artist.art),
-                contentDescription = "Artist art"
+        ){
+        Image(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(200.dp),
+            contentScale = ContentScale.Crop,
+            painter = painterResource(id = artist.art),
+            contentDescription = "Artist art"
             )
         }
     }
@@ -157,9 +157,7 @@ fun ArtistCardPreview() {
             lastSeenOnline = "3 minutes ago",
             image = R.drawable.ic_leonardo_da_vinci,
             art = R.drawable.ic_mona_lisa,
-
         )
-
         ArtistCard(
             artist = artist,
             onClick = {
