@@ -153,11 +153,13 @@ data class Artist(
 fun ArtistCardPreview() {
     ComposeInitTheme {
         val artist = Artist(
-            name = "Leonado da Vinci",
+            name = "Leonardo da Vinci",
             lastSeenOnline = "3 minutes ago",
             image = R.drawable.ic_leonardo_da_vinci,
             art = R.drawable.ic_mona_lisa,
+
         )
+
         ArtistCard(
             artist = artist,
             onClick = {

@@ -7,10 +7,10 @@
       </SelectionState>
       <SelectionState runConfigName="ArtistCardPreview">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2024-11-03T01:58:12.547209300Z">
+        <DropdownSelection timestamp="2024-11-17T02:23:10.561994Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\cloui\.android\avd\Pixel_4a_API_34_2.avd" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\cloui\.android\avd\Pixel_7_API_28.avd" />
             </handle>
           </Target>
         </DropdownSelection>
